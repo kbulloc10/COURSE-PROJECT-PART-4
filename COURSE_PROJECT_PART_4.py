@@ -7,7 +7,7 @@ def CreateUsers():
     print('##### Create users, passwords, and roles #####')
     ########## Open the file user.txt in append mode and assign to UserFile
 
-    UserFile = open(user.txt, "a+")
+    UserFile = open("User.txt", "a+")
     while True:
              
         ########## Write the line of code that will call function GetUserName and assign the return value to username
@@ -15,11 +15,10 @@ def CreateUsers():
              if (username.upper() == "END"):
                  break
         ########## Write the line of code that will call function GetUserPassword and assign the return value to userpwd
-             userpwd = GetUserPassword
+             userpwd = GetUserPassword()
         
         ########## Write the line of code that will call function GetUserRole() and assign the return value to userrole
-             userrole = GetUserRole()
-            
+             userrole = GetUserRole() 
              UserDetail = username + "|" + userpwd + "|" + userrole + "\n"  
              UserFile.write(UserDetail)
     # close file to save data
@@ -30,13 +29,13 @@ def CreateUsers():
 
 def GetUserName():
     ##### write the code to enter the username or End and return username 
-    username = input("Enter username or 'End' to quit.")  
+    username = input("Enter username or 'End' to quit:")  
     return username
     
 
 def GetUserPassword():
     ##### write the code to enter the pwd and return pwd
-    pwd = input("Enter your passwords.")
+    pwd = input("Enter your password:")
     return pwd
     
 def GetUserRole():
@@ -44,7 +43,7 @@ def GetUserRole():
 
      while True:
          ####### write the if statement that validates that Admin or User has been entered. If true, return userrole.  If false, re-input userrole
-         if (userrole.upper() == "Admin" or userrole.upper() == "USER"):
+         if (userrole.upper() == "ADMIN" or userrole.upper() == "USER"):
              return userrole
          else:
              userrole = input("Enter role (Admin or User): ")

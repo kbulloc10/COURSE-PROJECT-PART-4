@@ -1,0 +1,3 @@
+Dan|password|Admin
+newuser1|Password|User
+newuser2|password|Admin
